@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginView.png" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-bg-PhE">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-4Q-Xaa">
+                                <rect key="frame" x="604" y="601" width="92" height="43"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="HZp-gS-VWa"/>
+                                    <constraint firstAttribute="height" constant="43" id="MJd-bl-7jI"/>
+                                </constraints>
+                                <state key="normal" image="LoginButton.png"/>
+                                <connections>
+                                    <action selector="LoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zvk-ci-jUa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="801test1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgc-3H-vnY">
+                                <rect key="frame" x="343" y="448" width="340" height="32"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.56343687795262398" green="0.79112400158215634" blue="0.89210788955733811" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UAl-LO-Y7T"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="unK-Xd-I1Y">
+                                <rect key="frame" x="342" y="535" width="340" height="32"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.56343687799999997" green="0.79112400159999996" blue="0.89210788959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vGn-Yd-iar"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fsC-bg-PhE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Bbt-yt-G6W"/>
+                            <constraint firstItem="WSO-4Q-Xaa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="584" id="DjL-Dd-YzS"/>
+                            <constraint firstItem="fsC-bg-PhE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Hkc-80-gOC"/>
+                            <constraint firstItem="WSO-4Q-Xaa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="581" id="Hv8-HF-FX9"/>
+                            <constraint firstItem="fsC-bg-PhE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KBb-Ah-H3l"/>
+                            <constraint firstItem="fsC-bg-PhE" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="XeT-lB-Gz9"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="userNameTextField" destination="bgc-3H-vnY" id="jWa-ki-B1e"/>
+                        <outlet property="userPwdTextField" destination="unK-Xd-I1Y" id="hvl-6g-ipf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="498"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LoginButton.png" width="190" height="90"/>
+        <image name="LoginView.png" width="2048" height="1536"/>
+    </resources>
+</document>
