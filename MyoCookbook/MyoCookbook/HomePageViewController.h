@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HomePageViewController : UIViewController
-
+@class MyCollectionViewCell;
+@interface HomePageViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *recentCollection;
+@property (weak, nonatomic) MyCollectionViewCell* lastSelected;
 @end

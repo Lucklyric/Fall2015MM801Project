@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A89600001BFD8459008DBAE9 /* HomePageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A896FFFF1BFD8459008DBAE9 /* HomePageBackground.png */; };
 		A89600031BFD8D5D008DBAE9 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600021BFD8D5D008DBAE9 /* HomePageViewController.m */; };
+		A89600091BFD91C5008DBAE9 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600071BFD91C5008DBAE9 /* MyCollectionViewCell.m */; };
+		A896000A1BFD91C5008DBAE9 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89600081BFD91C5008DBAE9 /* MyCollectionViewCell.xib */; };
+		A896000C1BFD97B3008DBAE9 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = A896000B1BFD97B3008DBAE9 /* sample.png */; };
 		A896FFF81BFD3376008DBAE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A896FFF71BFD3376008DBAE9 /* Foundation.framework */; };
 		A896FFFA1BFD3385008DBAE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A896FFF91BFD3385008DBAE9 /* CoreGraphics.framework */; };
 		A896FFFC1BFD33FC008DBAE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A896FFFB1BFD33FC008DBAE9 /* UIKit.framework */; };
@@ -47,6 +50,10 @@
 /* Begin PBXFileReference section */
 		A89600011BFD8D5D008DBAE9 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		A89600021BFD8D5D008DBAE9 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		A89600061BFD91C5008DBAE9 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		A89600071BFD91C5008DBAE9 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
+		A89600081BFD91C5008DBAE9 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		A896000B1BFD97B3008DBAE9 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		A896FFF71BFD3376008DBAE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A896FFF91BFD3385008DBAE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A896FFFB1BFD33FC008DBAE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -146,6 +153,9 @@
 				A8F69A6E1BFD1C7C005A3240 /* LoginViewController.m */,
 				A89600011BFD8D5D008DBAE9 /* HomePageViewController.h */,
 				A89600021BFD8D5D008DBAE9 /* HomePageViewController.m */,
+				A89600061BFD91C5008DBAE9 /* MyCollectionViewCell.h */,
+				A89600071BFD91C5008DBAE9 /* MyCollectionViewCell.m */,
+				A89600081BFD91C5008DBAE9 /* MyCollectionViewCell.xib */,
 			);
 			path = MyoCookbook;
 			sourceTree = "<group>";
@@ -179,6 +189,7 @@
 		A8F69A6A1BFD1BE0005A3240 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A896000B1BFD97B3008DBAE9 /* sample.png */,
 				A896FFFF1BFD8459008DBAE9 /* HomePageBackground.png */,
 				A8F69A701BFD1D56005A3240 /* LoginButton.png */,
 				A8F69A6B1BFD1BE0005A3240 /* LoginView.png */,
@@ -291,11 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F69A6C1BFD1BE0005A3240 /* LoginView.png in Resources */,
+				A896000A1BFD91C5008DBAE9 /* MyCollectionViewCell.xib in Resources */,
 				A89600001BFD8459008DBAE9 /* HomePageBackground.png in Resources */,
 				A8F69A471BFCDEBE005A3240 /* LaunchScreen.storyboard in Resources */,
 				A8F69A441BFCDEBE005A3240 /* Assets.xcassets in Resources */,
 				A8F69A711BFD1D56005A3240 /* LoginButton.png in Resources */,
 				A8F69A421BFCDEBE005A3240 /* Main.storyboard in Resources */,
+				A896000C1BFD97B3008DBAE9 /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +337,7 @@
 				A8F69A6F1BFD1C7C005A3240 /* LoginViewController.m in Sources */,
 				A8F69A3C1BFCDEBE005A3240 /* AppDelegate.m in Sources */,
 				A8F69A391BFCDEBE005A3240 /* main.m in Sources */,
+				A89600091BFD91C5008DBAE9 /* MyCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
