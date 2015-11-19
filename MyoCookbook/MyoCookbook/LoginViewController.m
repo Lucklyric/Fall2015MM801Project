@@ -36,9 +36,18 @@
 - (IBAction)LoginButton:(id)sender {
     if ([self.userNameTextField.text isEqualToString:@"801test1"] && [self.userPwdTextField.text isEqualToString:@"111111"]) {
         /*Jump to Main Panel*/
+        [self performSegueWithIdentifier:@"LoginToHomePage" sender:self];
     }else{
         /*Show warnning*/
         NSLog(@"Login Field");
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                            message:@"Password or Username incorrect!"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Retry"
+                                                  otherButtonTitles:nil];
+        [alertView setTag:1];
+        [alertView show];
+
     }
 }
 

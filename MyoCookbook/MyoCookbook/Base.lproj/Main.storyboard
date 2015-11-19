@@ -73,14 +73,47 @@
                     <connections>
                         <outlet property="userNameTextField" destination="bgc-3H-vnY" id="jWa-ki-B1e"/>
                         <outlet property="userPwdTextField" destination="unK-Xd-I1Y" id="hvl-6g-ipf"/>
+                        <segue destination="Zfi-RB-jAQ" kind="show" identifier="LoginToHomePage" id="qeG-HO-EfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="509" y="498"/>
         </scene>
+        <!--Home Page View Controller-->
+        <scene sceneID="CVt-43-5IL">
+            <objects>
+                <viewController id="Zfi-RB-jAQ" customClass="HomePageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YSX-EJ-TNq"/>
+                        <viewControllerLayoutGuide type="bottom" id="JH9-rV-FmF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ADR-z1-nIa">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomePageBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-yz-5T8">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0mI-yz-5T8" firstAttribute="centerY" secondItem="ADR-z1-nIa" secondAttribute="centerY" id="Bbx-4d-iQn"/>
+                            <constraint firstItem="0mI-yz-5T8" firstAttribute="height" secondItem="ADR-z1-nIa" secondAttribute="height" id="C5I-kT-Kez"/>
+                            <constraint firstItem="0mI-yz-5T8" firstAttribute="width" secondItem="ADR-z1-nIa" secondAttribute="width" id="N92-Gx-G10"/>
+                            <constraint firstItem="0mI-yz-5T8" firstAttribute="centerX" secondItem="ADR-z1-nIa" secondAttribute="centerX" id="tD0-Gf-Ew4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpE-e6-Vic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="498"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="HomePageBackground.png" width="2048" height="1536"/>
         <image name="LoginButton.png" width="190" height="90"/>
         <image name="LoginView.png" width="2048" height="1536"/>
     </resources>
