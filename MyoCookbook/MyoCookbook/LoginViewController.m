@@ -74,7 +74,7 @@
         offset = -230;
     }
     
-    self.view.frame = CGRectMake(0.0f, offset , self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(offset, 0 , self.view.frame.size.width, self.view.frame.size.height);
     
     [UIView commitAnimations];
     

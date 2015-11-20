@@ -23,4 +23,5 @@
 @property (assign,nonatomic) NSString * poseString; //which pose
 @property (assign,nonatomic) NSString * accDir; //accleration direction
 - (UINavigationController*)connectMyo;
++ (MyoController*)sharedManager;
 @end

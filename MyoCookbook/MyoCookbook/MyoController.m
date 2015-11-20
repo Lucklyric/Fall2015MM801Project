@@ -10,6 +10,18 @@
 
 
 @implementation MyoController
+static MyoController *sharedManager = nil;
+
++ (MyoController*)sharedManager
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedManager = [[super alloc] init];
+    });
+    return sharedManager;
+}
+
+
 - (id)init{
     self = [super init];
     _originSetup=0;
