@@ -112,17 +112,18 @@ static MyoController *sharedManager = nil;
 
 - (void)didSyncArm:(NSNotification *)notification {
     // Retrieve the arm event from the notification's userInfo with the kTLMKeyArmSyncEvent key.
-    TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
+    //TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
     
     // Update the armLabel with arm information.
-    _armString = armEvent.arm == TLMArmRight ? @"Right" : @"Left";
-    _directionString = armEvent.xDirection == TLMArmXDirectionTowardWrist ? @"Toward Wrist" : @"Toward Elbow";
-    _MyoSyncState=1; //synced
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
+                                                        object:@"MyoSync"];
+   
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {
     // Reset the labels.
-    _MyoSyncState=0; //not synced
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
+                                                        object:@"MyoUnsync"];
     
 }
 
