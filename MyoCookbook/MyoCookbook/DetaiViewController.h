@@ -10,5 +10,9 @@
 
 @interface DetaiViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *myoStatusLabel;
+@property (weak, nonatomic) IBOutlet UITextView *scrollTextField;
 @property (weak,nonatomic)  UIViewController *fromView;
+@property (assign,nonatomic) float preOffset;
+@property (assign,nonatomic) NSInteger fistStatus;
+
 @end

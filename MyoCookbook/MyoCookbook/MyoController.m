@@ -150,7 +150,7 @@ static MyoController *sharedManager = nil;
     }
     _Xrotation = angles.roll.degrees;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoArmTwist"
-                                                        object:@"MyoArmTwistAngleDiff"];
+                                                        object:[[NSNumber alloc]initWithFloat:diff]];
 }
 
 - (void)didReceiveAccelerometerEvent:(NSNotification *)notification {
