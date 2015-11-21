@@ -144,6 +144,7 @@ static MyoController *sharedManager = nil;
         _originX=angles.roll.degrees;
         _originSetup=1;
     }
+    _Xrotation = angles.roll.degrees;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoArmTwist"
                                                         object:@"MyoArmTwistAngleDiff"];
 }
