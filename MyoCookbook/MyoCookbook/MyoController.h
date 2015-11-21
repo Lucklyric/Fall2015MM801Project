@@ -15,6 +15,8 @@
 @property (assign,nonatomic) int fistStatus;
 @property (assign,nonatomic) int originSetup;
 @property (strong,nonatomic) TLMPose *currentPose; // currentPose
+@property (weak,nonatomic) UIViewController *currentView; 
+
 - (UINavigationController*)connectMyo;
 + (MyoController*)sharedManager;
 @end

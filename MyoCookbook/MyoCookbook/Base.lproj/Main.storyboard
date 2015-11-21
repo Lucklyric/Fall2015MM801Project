@@ -216,6 +216,51 @@
                                     <outlet property="delegate" destination="Zfi-RB-jAQ" id="KHx-WL-Ekc"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22G-dJ-eJH">
+                                <rect key="frame" x="406" y="94" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="fist"/>
+                                <connections>
+                                    <action selector="selectGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="7cX-Ty-KoJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9M-mf-rlI">
+                                <rect key="frame" x="460" y="94" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Up"/>
+                                <connections>
+                                    <action selector="upGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="Ijc-l3-6r9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54U-pz-CIv">
+                                <rect key="frame" x="514" y="94" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Down"/>
+                                <connections>
+                                    <action selector="downGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="bHU-Cf-pht"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlT-1a-Maa">
+                                <rect key="frame" x="568" y="94" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Left"/>
+                                <connections>
+                                    <action selector="leftGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="0GV-66-JmR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="291-bw-ot8">
+                                <rect key="frame" x="622" y="94" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Right"/>
+                                <connections>
+                                    <action selector="rightGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="yZj-bD-vRi"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-9Z-pu5">
                                 <rect key="frame" x="14" y="28" width="902" height="47"/>
                                 <animations/>
@@ -248,18 +293,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Myo Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGw-kM-ddJ">
-                                <rect key="frame" x="791" y="730" width="114" height="21"/>
+                                <rect key="frame" x="764" y="730" width="114" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh0-9a-JFe">
-                                <rect key="frame" x="897" y="732" width="16" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uncon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh0-9a-JFe">
+                                <rect key="frame" x="870" y="726" width="39" height="28"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-pc-fAC">
@@ -302,58 +347,31 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orJ-g8-oNB">
                                 <rect key="frame" x="583" y="353" width="105" height="75"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="startButtonTap:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="0SY-h0-LUx"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKr-PA-C5z">
                                 <rect key="frame" x="460" y="346" width="105" height="75"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="cancleButtonTap:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="Z4o-Fv-pAJ"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwh-Ue-W4i">
                                 <rect key="frame" x="339" y="353" width="105" height="75"/>
                                 <animations/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22G-dJ-eJH">
-                                <rect key="frame" x="406" y="94" width="46" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Select"/>
                                 <connections>
-                                    <action selector="selectGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="7cX-Ty-KoJ"/>
+                                    <action selector="saveButtonTap:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="hk0-kf-Dk2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9M-mf-rlI">
-                                <rect key="frame" x="460" y="94" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhi-SG-nih">
+                                <rect key="frame" x="352" y="94" width="46" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Up"/>
+                                <state key="normal" title="spre"/>
                                 <connections>
-                                    <action selector="upGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="Ijc-l3-6r9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54U-pz-CIv">
-                                <rect key="frame" x="514" y="94" width="46" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Down"/>
-                                <connections>
-                                    <action selector="downGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="bHU-Cf-pht"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlT-1a-Maa">
-                                <rect key="frame" x="568" y="94" width="46" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Left"/>
-                                <connections>
-                                    <action selector="leftGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="0GV-66-JmR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="291-bw-ot8">
-                                <rect key="frame" x="622" y="94" width="46" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.98039221759999995" green="0.062745101750000004" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Right"/>
-                                <connections>
-                                    <action selector="rightGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="yZj-bD-vRi"/>
+                                    <action selector="spreadGesture:" destination="Zfi-RB-jAQ" eventType="touchUpInside" id="XFC-Wh-5YZ"/>
                                 </connections>
                             </button>
                         </subviews>

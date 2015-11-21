@@ -7,7 +7,7 @@
 //
 
 #import "DetaiViewController.h"
-
+#import "MyoController.h"
 @interface DetaiViewController ()
 
 @end
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[MyoController sharedManager]setCurrentView:self];
     // Do any additional setup after loading the view.
 }
 
@@ -25,6 +26,7 @@
 }
 
 - (IBAction)backButtonTap:(id)sender {
+    [[MyoController sharedManager] setCurrentView:self.fromView];
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];

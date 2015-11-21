@@ -10,5 +10,5 @@
 
 @interface DetaiViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *myoStatusLabel;
-
+@property (weak,nonatomic)  UIViewController *fromView;
 @end

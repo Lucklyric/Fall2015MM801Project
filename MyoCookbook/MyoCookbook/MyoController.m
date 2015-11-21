@@ -27,6 +27,7 @@ static MyoController *sharedManager = nil;
     _originSetup=0;
     if (self)
     {
+        self.currentView = nil;
         // Custom stuff
         // Data notifications are received through NSNotificationCenter.
         // Posted whenever a TLMMyo connects

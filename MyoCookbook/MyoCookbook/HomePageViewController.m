@@ -9,7 +9,8 @@
 #import "HomePageViewController.h"
 #import "MyCollectionViewCell.h"
 #import "MyoController.h"
-
+#import "JHNotificationManager.h"
+#import "DetaiViewController.h"
 @interface HomePageViewController ()
 
 @end
@@ -32,7 +33,7 @@
                                                  name:@"MyoCookbookGesture"
                                                object:nil];
 
-    
+    [[MyoController sharedManager] setCurrentView:self];
 }
 
 
@@ -136,15 +137,20 @@
 
 
 
-/*
+
  #pragma mark - Navigation
  
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"homeToDetail"]) {
+        
+        // Get destination view
+        DetaiViewController *vc = [segue destinationViewController];
+        
+        [vc setFromView:self];
+    }
+
+}
+
 
 
 
@@ -212,6 +218,7 @@
 #pragma mark - Gesture CallBack
 -(void)spreadCallback{
     if (self.trackingStatus == 2) {
+        self.cancleLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
         [self menuShow:YES];
         self.trackingStatus = 1;
     }
@@ -220,7 +227,6 @@
 -(void)fistCallback{
     if (self.trackingStatus == 1) {
         self.trackingStatus = 2;
-        self.cancleLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
         [self menuShow:NO];
     }
     //[self performSegueWithIdentifier:@"homeToDetail" sender:self];
@@ -312,14 +318,104 @@
 - (void)myoCoookBookGestureCallback:(NSNotification *)notification {
     NSLog(@"Myo Gesture Callback hit");
 
+    NSString* notif = @"";
     NSString* gestureName = [notification object];
     if ([gestureName isEqual:@"MyoConnect"]) {
-        self.myoStatusLabel.backgroundColor = [UIColor greenColor];
+        self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
+        self.myoStatusLabel.text = @"UnSyn";
+        notif = @"Myo Connected";
         NSLog(@"Myo Connected");
+    }else if([gestureName isEqual:@"MyoUnconnect"]){
+        self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
+        self.myoStatusLabel.text = @"UnCon";
+        notif = @"Myo UnConnect";
+        NSLog(@"Myo UnConnect");
+    }else if([gestureName isEqual:@"MyoSync"]){
+        self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
+        self.myoStatusLabel.text = @"Locked";
+        notif = @"Myo MyoSync";
+        NSLog(@"Myo Syned");
+    }else if([gestureName isEqual:@"MyoUnsync"]){
+        self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
+        self.myoStatusLabel.text = @"UnSyn";
+        NSLog(@"Myo UnSyned");
+        notif = @"Myo MyoUnsync";
+
+    }else if([gestureName isEqual:@"MyoUnlock"]){
+        self.myoStatusLabel.backgroundColor = [UIColor greenColor];
+        self.myoStatusLabel.text = @"UnLock";
+        NSLog(@"Myo UnLock");
+        notif = @"Myo UnLcoked";
+    }else if([gestureName isEqual:@"MyoLock"]){
+        self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
+        self.myoStatusLabel.text = @"Locked";
+        NSLog(@"Myo Locked");
+        notif = @"Myo Locked";
+
+    }else if([gestureName isEqual:@"MyoGestureFist"]){
+        [self fistCallback];
+        NSLog(@"Myo fist");
+        notif = @"Fist Gesture";
+
+    }else if([gestureName isEqual:@"MyoGestureWaveDown"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
+        if ([[[MyoController sharedManager]currentView]isEqual:self]) {
+            [self downCallback];
+            NSLog(@"Myo down");
+            notif = @"Wave down Gesture";
+        }
+
+
+    }else if([gestureName isEqual:@"MyoGestureWaveLeft"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
+        [self leftCallback];
+        notif = @"Wave left Gesture";
+
+    }else if([gestureName isEqual:@"MyoGestureWaveUp"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
+        [self upCallback];
+        notif = @"Wave up Gesture";
+
+    }else if([gestureName isEqual:@"MyoGestureWaveRight"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
+        [self rightCallback];
+        notif = @"Wave right Gesture";
+
+    }else if([gestureName isEqual:@"MyoGestureFingerSpread"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
+        [self spreadCallback];
+        notif = @"Finger Spread Gesture";
+
     }
+//    if (![notif isEqual:@""]) {
+//        [JHNotificationManager notificationWithMessage:notif direction:JHNotificationAnimationDirectionSlideInLeft];
+//    }
+
     
 }
 
+- (IBAction)startButtonTap:(id)sender {
+    self.startLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+    [self menuShow:YES];
+    self.trackingStatus = 1;
+    [self performSegueWithIdentifier:@"homeToDetail" sender:self];
+}
+- (IBAction)cancleButtonTap:(id)sender {
+    self.cancleLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+    [self menuShow:YES];
+    self.trackingStatus = 1;
+
+}
+- (IBAction)saveButtonTap:(id)sender {
+    self.saveForLaterLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+    [self menuShow:YES];
+    self.trackingStatus = 1;
+}
 #pragma mark - Test Gesture Part
 - (IBAction)selectGesture:(id)sender {
     [self fistCallback];
@@ -339,6 +435,9 @@
 
 - (IBAction)rightGesture:(id)sender {
     [self rightCallback];
+}
+- (IBAction)spreadGesture:(id)sender {
+    [self spreadCallback];
 }
 
 
