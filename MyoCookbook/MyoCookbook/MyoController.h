@@ -16,7 +16,9 @@
 @property (assign,nonatomic) int originSetup;
 @property (strong,nonatomic) TLMPose *currentPose; // currentPose
 @property (weak,nonatomic) UIViewController *currentView; 
-
+@property (assign,nonatomic) int unlockStatus;
+@property (assign,nonatomic) int connectionStatus;
+@property (assign,nonatomic) int syncStatus;
 - (UINavigationController*)connectMyo;
 + (MyoController*)sharedManager;
 @end

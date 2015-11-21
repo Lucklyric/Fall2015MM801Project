@@ -86,7 +86,7 @@ static MyoController *sharedManager = nil;
 - (void)didConnectDevice:(NSNotification *)notification {
     // Access the connected device.
     //TLMMyo *myo = notification.userInfo[kTLMKeyMyo];
-    
+    _connectionStatus=1;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoConnect"];
 }
@@ -94,19 +94,21 @@ static MyoController *sharedManager = nil;
 - (void)didDisconnectDevice:(NSNotification *)notification {
     // Access the disconnected device.
     //TLMMyo *myo = notification.userInfo[kTLMKeyMyo];
-    
+    _connectionStatus=0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoUnconnect"];
 }
 
 - (void)didUnlockDevice:(NSNotification *)notification {
     // Update the state to reflect Myo's lock state.
+    _unlockStatus=0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoUnlock"];
 }
 
 - (void)didLockDevice:(NSNotification *)notification {
     // Update the label to reflect Myo's lock state.
+    _unlockStatus=1;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoLock"];
 }
@@ -114,7 +116,7 @@ static MyoController *sharedManager = nil;
 - (void)didSyncArm:(NSNotification *)notification {
     // Retrieve the arm event from the notification's userInfo with the kTLMKeyArmSyncEvent key.
     //TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
-    
+    _syncStatus=1;
     // Update the armLabel with arm information.
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoSync"];
@@ -123,6 +125,7 @@ static MyoController *sharedManager = nil;
 
 - (void)didUnsyncArm:(NSNotification *)notification {
     // Reset the labels.
+    _syncStatus=0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoUnsync"];
     
