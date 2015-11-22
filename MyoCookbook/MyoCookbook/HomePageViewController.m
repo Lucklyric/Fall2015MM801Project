@@ -110,10 +110,46 @@
         self.lastRecentSelected = cell;
     }
 }
+
+- (IBAction)collection:(id)sender {
+    [self performSegueWithIdentifier:@"showCollection" sender:self];
+    
+}
+
+
 - (IBAction)settingButtonTap:(id)sender {
-    UINavigationController *controller =  [[MyoController sharedManager] connectMyo];
-    // Present the settings view controller modally.
-    [self presentViewController:controller animated:YES completion:nil];
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Setting"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert]; // 1
+    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Choose Myo Device"
+                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button one"
+                                                                    );
+                                                              UINavigationController *controller =  [[MyoController sharedManager] connectMyo];
+                                                              // Present the settings view controller modally.
+                                                              [self presentViewController:controller animated:YES completion:nil];
+
+                                                          }]; // 2
+    UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Calibrate Myo"
+                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                               NSLog(@"You pressed button two");
+                                                           }]; // 3
+
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"Cancle"
+                                                          style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button two");
+                                                          }]; // 3
+
+    [alert addAction:firstAction]; // 4
+    [alert addAction:secondAction]; // 5
+    [alert addAction:cancleAction];
+    
+    [self presentViewController:alert animated:YES completion:nil]; // 6
+    
+    
+    
 
 }
 - (IBAction)searchButtonTap:(id)sender {
@@ -214,6 +250,9 @@
 //    [self.saveForLaterLabel setHidden:ifHidden];
 }
 
+- (IBAction)helpButton:(id)sender {
+    [self performSegueWithIdentifier:@"showTutorial" sender:self];
+}
 
 #pragma mark - Gesture CallBack
 -(void)spreadCallback{
@@ -228,6 +267,8 @@
     if (self.trackingStatus == 1) {
         self.trackingStatus = 2;
         [self menuShow:NO];
+    }else if (self.trackingStatus == 3){
+        [self collection:nil];
     }
     //[self performSegueWithIdentifier:@"homeToDetail" sender:self];
 }
@@ -239,8 +280,12 @@
             self.recentCollection.backgroundColor = [UIColor colorWithRed:144/225.0f green: 202/225.0f  blue:227/225.0f  alpha:1];
             self.featureCollection.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
         }
+    }else if (self.trackingStatus == 3){
+        //self.featureCollection.backgroundColor = [UIColor colorWithRed:144/225.0f green: 202/225.0f  blue:227/225.0f  alpha:1];
+        self.recentCollection.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+        self.collectionButton.backgroundColor = [UIColor colorWithRed:111/225.0f green: 113/225.0f  blue:121/225.0f  alpha:1];
+        self.trackingStatus = 1;
     }
-    
 }
 
 -(void)downCallback{
@@ -249,11 +294,14 @@
             self.cursorLine =2;
             self.featureCollection.backgroundColor = [UIColor colorWithRed:144/225.0f green: 202/225.0f  blue:227/225.0f  alpha:1];
             self.recentCollection.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+        }else if(self.cursorLine == 2){
+            self.trackingStatus = 3;
+            self.recentCollection.backgroundColor = [UIColor colorWithRed:144/225.0f green: 202/225.0f  blue:227/225.0f  alpha:1];
+            self.collectionButton.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
         }
     }else if(self.trackingStatus == 2){
         
     }
-    
 }
 -(void)leftCallback{
     if (self.trackingStatus == 1) {

@@ -13,12 +13,15 @@
 		A896000A1BFD91C5008DBAE9 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89600081BFD91C5008DBAE9 /* MyCollectionViewCell.xib */; };
 		A896000C1BFD97B3008DBAE9 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = A896000B1BFD97B3008DBAE9 /* sample.png */; };
 		A896000E1BFEFE2C008DBAE9 /* searchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A896000D1BFEFE2C008DBAE9 /* searchBar.png */; };
-		A89600111BFFA5DA008DBAE9 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600101BFFA5DA008DBAE9 /* SearchResultViewController.m */; };
+		A89600111BFFA5DA008DBAE9 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600101BFFA5DA008DBAE9 /* TutorialViewController.m */; };
 		A89600141BFFA5F2008DBAE9 /* DetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600131BFFA5F2008DBAE9 /* DetaiViewController.m */; };
-		A89600171BFFA60F008DBAE9 /* StepsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600161BFFA60F008DBAE9 /* StepsViewController.m */; };
+		A89600171BFFA60F008DBAE9 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600161BFFA60F008DBAE9 /* CollectionViewController.m */; };
 		A89600191BFFAAF3008DBAE9 /* GeneralBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = A89600181BFFAAF3008DBAE9 /* GeneralBackGround.png */; };
 		A896001B1BFFB462008DBAE9 /* samplesteps.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A896001A1BFFB462008DBAE9 /* samplesteps.jpg */; };
 		A896001D1BFFC599008DBAE9 /* twoItemMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = A896001C1BFFC599008DBAE9 /* twoItemMenu.png */; };
+		A89600201BFFDF87008DBAE9 /* MyoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A896001F1BFFDF87008DBAE9 /* MyoController.m */; };
+		A89600241BFFEFB9008DBAE9 /* JHNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A89600231BFFEFB9008DBAE9 /* JHNotificationManager.m */; };
+		A89600261C026C4F008DBAE9 /* Tutorial_with_text.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A89600251C026C4F008DBAE9 /* Tutorial_with_text.jpg */; };
 		A896FFF81BFD3376008DBAE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A896FFF71BFD3376008DBAE9 /* Foundation.framework */; };
 		A896FFFA1BFD3385008DBAE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A896FFF91BFD3385008DBAE9 /* CoreGraphics.framework */; };
 		A896FFFC1BFD33FC008DBAE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A896FFFB1BFD33FC008DBAE9 /* UIKit.framework */; };
@@ -62,15 +65,20 @@
 		A89600081BFD91C5008DBAE9 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		A896000B1BFD97B3008DBAE9 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		A896000D1BFEFE2C008DBAE9 /* searchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBar.png; sourceTree = "<group>"; };
-		A896000F1BFFA5DA008DBAE9 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
-		A89600101BFFA5DA008DBAE9 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		A896000F1BFFA5DA008DBAE9 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		A89600101BFFA5DA008DBAE9 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		A89600121BFFA5F2008DBAE9 /* DetaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetaiViewController.h; sourceTree = "<group>"; };
 		A89600131BFFA5F2008DBAE9 /* DetaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetaiViewController.m; sourceTree = "<group>"; };
-		A89600151BFFA60F008DBAE9 /* StepsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsViewController.h; sourceTree = "<group>"; };
-		A89600161BFFA60F008DBAE9 /* StepsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsViewController.m; sourceTree = "<group>"; };
+		A89600151BFFA60F008DBAE9 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		A89600161BFFA60F008DBAE9 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		A89600181BFFAAF3008DBAE9 /* GeneralBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GeneralBackGround.png; sourceTree = "<group>"; };
 		A896001A1BFFB462008DBAE9 /* samplesteps.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = samplesteps.jpg; sourceTree = "<group>"; };
 		A896001C1BFFC599008DBAE9 /* twoItemMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twoItemMenu.png; sourceTree = "<group>"; };
+		A896001E1BFFDF87008DBAE9 /* MyoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyoController.h; sourceTree = "<group>"; };
+		A896001F1BFFDF87008DBAE9 /* MyoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyoController.m; sourceTree = "<group>"; };
+		A89600221BFFEFB9008DBAE9 /* JHNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHNotificationManager.h; sourceTree = "<group>"; };
+		A89600231BFFEFB9008DBAE9 /* JHNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHNotificationManager.m; sourceTree = "<group>"; };
+		A89600251C026C4F008DBAE9 /* Tutorial_with_text.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tutorial_with_text.jpg; sourceTree = "<group>"; };
 		A896FFF71BFD3376008DBAE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A896FFF91BFD3385008DBAE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A896FFFB1BFD33FC008DBAE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,9 +137,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A89600211BFFEFB9008DBAE9 /* JHNotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				A89600221BFFEFB9008DBAE9 /* JHNotificationManager.h */,
+				A89600231BFFEFB9008DBAE9 /* JHNotificationManager.m */,
+			);
+			name = JHNotificationManager;
+			path = MyoCookbook/JHNotificationManager;
+			sourceTree = "<group>";
+		};
 		A8F69A2B1BFCDEBE005A3240 = {
 			isa = PBXGroup;
 			children = (
+				A89600211BFFEFB9008DBAE9 /* JHNotificationManager */,
 				A896FFFD1BFD359B008DBAE9 /* MyoKit.framework */,
 				A896FFFB1BFD33FC008DBAE9 /* UIKit.framework */,
 				A896FFF91BFD3385008DBAE9 /* CoreGraphics.framework */,
@@ -159,6 +178,8 @@
 		A8F69A361BFCDEBE005A3240 /* MyoCookbook */ = {
 			isa = PBXGroup;
 			children = (
+				A896001E1BFFDF87008DBAE9 /* MyoController.h */,
+				A896001F1BFFDF87008DBAE9 /* MyoController.m */,
 				A8F69A3A1BFCDEBE005A3240 /* AppDelegate.h */,
 				A8F69A3B1BFCDEBE005A3240 /* AppDelegate.m */,
 				A8F69A401BFCDEBE005A3240 /* Main.storyboard */,
@@ -173,12 +194,12 @@
 				A89600061BFD91C5008DBAE9 /* MyCollectionViewCell.h */,
 				A89600071BFD91C5008DBAE9 /* MyCollectionViewCell.m */,
 				A89600081BFD91C5008DBAE9 /* MyCollectionViewCell.xib */,
-				A896000F1BFFA5DA008DBAE9 /* SearchResultViewController.h */,
-				A89600101BFFA5DA008DBAE9 /* SearchResultViewController.m */,
+				A896000F1BFFA5DA008DBAE9 /* TutorialViewController.h */,
+				A89600101BFFA5DA008DBAE9 /* TutorialViewController.m */,
 				A89600121BFFA5F2008DBAE9 /* DetaiViewController.h */,
 				A89600131BFFA5F2008DBAE9 /* DetaiViewController.m */,
-				A89600151BFFA60F008DBAE9 /* StepsViewController.h */,
-				A89600161BFFA60F008DBAE9 /* StepsViewController.m */,
+				A89600151BFFA60F008DBAE9 /* CollectionViewController.h */,
+				A89600161BFFA60F008DBAE9 /* CollectionViewController.m */,
 			);
 			path = MyoCookbook;
 			sourceTree = "<group>";
@@ -212,6 +233,7 @@
 		A8F69A6A1BFD1BE0005A3240 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A89600251C026C4F008DBAE9 /* Tutorial_with_text.jpg */,
 				A896001C1BFFC599008DBAE9 /* twoItemMenu.png */,
 				A896001A1BFFB462008DBAE9 /* samplesteps.jpg */,
 				A89600181BFFAAF3008DBAE9 /* GeneralBackGround.png */,
@@ -339,6 +361,7 @@
 				A896001D1BFFC599008DBAE9 /* twoItemMenu.png in Resources */,
 				A89600191BFFAAF3008DBAE9 /* GeneralBackGround.png in Resources */,
 				A896001B1BFFB462008DBAE9 /* samplesteps.jpg in Resources */,
+				A89600261C026C4F008DBAE9 /* Tutorial_with_text.jpg in Resources */,
 				A896000C1BFD97B3008DBAE9 /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,9 +391,11 @@
 				A8F69A6F1BFD1C7C005A3240 /* LoginViewController.m in Sources */,
 				A8F69A3C1BFCDEBE005A3240 /* AppDelegate.m in Sources */,
 				A8F69A391BFCDEBE005A3240 /* main.m in Sources */,
+				A89600241BFFEFB9008DBAE9 /* JHNotificationManager.m in Sources */,
 				A89600091BFD91C5008DBAE9 /* MyCollectionViewCell.m in Sources */,
-				A89600111BFFA5DA008DBAE9 /* SearchResultViewController.m in Sources */,
-				A89600171BFFA60F008DBAE9 /* StepsViewController.m in Sources */,
+				A89600111BFFA5DA008DBAE9 /* TutorialViewController.m in Sources */,
+				A89600171BFFA60F008DBAE9 /* CollectionViewController.m in Sources */,
+				A89600201BFFDF87008DBAE9 /* MyoController.m in Sources */,
 				A89600141BFFA5F2008DBAE9 /* DetaiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					$SOURCE_ROOT,
 					"$(inherited)",
@@ -520,6 +546,7 @@
 					$SOURCE_ROOT/../,
 				);
 				INFOPLIST_FILE = MyoCookbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					$SOURCE_ROOT,
 					"$(inherited)",
@@ -543,6 +571,7 @@
 					$SOURCE_ROOT/../,
 				);
 				INFOPLIST_FILE = MyoCookbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

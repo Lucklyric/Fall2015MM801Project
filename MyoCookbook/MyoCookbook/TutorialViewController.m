@@ -1,18 +1,18 @@
 //
-//  StepsViewController.m
+//  SearchResultViewController.m
 //  MyoCookbook
 //
 //  Created by Alvin Sun on 2015-11-20.
 //  Copyright © 2015 Alvin Sun. All rights reserved.
 //
 
-#import "StepsViewController.h"
+#import "TutorialViewController.h"
 
-@interface StepsViewController ()
+@interface TutorialViewController ()
 
 @end
 
-@implementation StepsViewController
+@implementation TutorialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +22,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 /*

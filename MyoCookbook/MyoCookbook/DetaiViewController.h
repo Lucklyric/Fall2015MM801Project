@@ -14,5 +14,8 @@
 @property (weak,nonatomic)  UIViewController *fromView;
 @property (assign,nonatomic) float preOffset;
 @property (assign,nonatomic) NSInteger fistStatus;
+@property (assign,nonatomic) NSInteger trackingLine; //1,back 2,text
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end

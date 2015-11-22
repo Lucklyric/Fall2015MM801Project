@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.trackingLine = 2;
+    self.textLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+    
     if ([[MyoController sharedManager]connectionStatus] ==1 ) {
         if ([[MyoController sharedManager]syncStatus]==1) {
             if ([[MyoController sharedManager]unlockStatus]==1) {
@@ -62,6 +66,38 @@
 
 - (IBAction)settingButtonLabel:(id)sender {
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Setting"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert]; // 1
+    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Choose Myo Device"
+                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button one"
+                                                                    );
+                                                              UINavigationController *controller =  [[MyoController sharedManager] connectMyo];
+                                                              // Present the settings view controller modally.
+                                                              [self presentViewController:controller animated:YES completion:nil];
+                                                              
+                                                          }]; // 2
+    UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Calibrate Myo"
+                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                               NSLog(@"You pressed button two");
+                                                           }]; // 3
+    
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"Cancle"
+                                                           style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                                                               NSLog(@"You pressed button two");
+                                                           }]; // 3
+    
+    [alert addAction:firstAction]; // 4
+    [alert addAction:secondAction]; // 5
+    [alert addAction:cancleAction];
+    
+    [self presentViewController:alert animated:YES completion:nil]; // 6
+    
+}
+
+- (IBAction)helpButtonTap:(id)sender {
+    [self performSegueWithIdentifier:@"showTutorial" sender:self];
 }
 
 
@@ -104,6 +140,11 @@
 }
 
 -(void)leftCallback{
+    if (self.trackingLine == 2) {
+        self.backButton.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+        self.trackingLine =1;
+        self.textLabel
+    }
     
 }
 
@@ -122,17 +163,16 @@
     }
     NSNumber* number = [notification object];
     float diff = [number floatValue];
-    rc.origin.y += diff;
+    rc.origin.y = self.preOffset - diff*10;
     [self.scrollTextField scrollRectToVisible:rc animated:YES];
     NSLog(@"%f",diff);
 }
 
 - (void)myoCoookBookGestureCallback:(NSNotification *)notification {
     NSLog(@"Myo Gesture Callback hit");
-    
+    self.fistStatus = 0;
     NSString* notif = @"";
     NSString* gestureName = [notification object];
-    self.fistStatus = 0;
     if ([gestureName isEqual:@"MyoConnect"]) {
         self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
         self.myoStatusLabel.text = @"UnSyn";

@@ -1,5 +1,5 @@
 //
-//  SearchResultViewController.h
+//  StepsViewController.h
 //  MyoCookbook
 //
 //  Created by Alvin Sun on 2015-11-20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchResultViewController : UIViewController
+@interface CollectionViewController : UIViewController
 
 @end
