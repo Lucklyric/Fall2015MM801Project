@@ -108,14 +108,14 @@ static MyoController *sharedManager = nil;
 
 - (void)didUnlockDevice:(NSNotification *)notification {
     // Update the state to reflect Myo's lock state.
-    _unlockStatus=0;
+    _unlockStatus=1;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoUnlock"];
 }
 
 - (void)didLockDevice:(NSNotification *)notification {
     // Update the label to reflect Myo's lock state.
-    _unlockStatus=1;
+    _unlockStatus=0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                         object:@"MyoLock"];
 }
