@@ -177,6 +177,8 @@ static MyoController *sharedManager = nil;
     }
     if(_LRrotation!=0 && _UDrotation!=0){
         _threshValue = (_LRrotation+_UDrotation)/2;
+        _LRrotation=0.0f;
+        _UDrotation=0.0f;
         NSLog(@"THRESH:%f",self.threshValue);
     }
     
