@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.calStatus = 1;
+    
+    NSLog(@"connection:%d,syscnStatus:%d,unlock%d",[[MyoController sharedManager]connectionStatus],[[MyoController sharedManager]syncStatus],[[MyoController sharedManager]unlockStatus]);
+    
     // Do any additional setup after loading the view.
     if ([[MyoController sharedManager]connectionStatus] ==1 ) {
         if ([[MyoController sharedManager]syncStatus]==1) {
@@ -47,12 +50,12 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [[MyoController sharedManager] setCurrentView:self.fromView];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)backButton:(id)sender {
+    [[MyoController sharedManager] setCurrentView:self.fromView];
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
@@ -76,6 +79,7 @@
         [self.cal2Image setHidden:NO];
         self.textLable.backgroundColor = [UIColor orangeColor];
         self.textLable.text = @"2. Please hold your arm as shown in the picture below and make the FIST";
+        self.calStatus = 2;
     }else if (self.calStatus == 2){
         [[MyoController sharedManager]calibrateLR];
         self.textLable.text = @"Calibration Finished";
@@ -121,6 +125,8 @@
         notif = @"Myo Locked";
         
     }else if([gestureName isEqual:@"MyoGestureFist"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
         [self fistCallback];
         NSLog(@"Myo fist");
         notif = @"Fist Gesture";

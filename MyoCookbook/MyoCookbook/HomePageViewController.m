@@ -416,6 +416,8 @@
         notif = @"Myo Locked";
 
     }else if([gestureName isEqual:@"MyoGestureFist"]){
+        if (![[[MyoController sharedManager]currentView]isEqual:self]) return;
+
         [self fistCallback];
         NSLog(@"Myo fist");
         notif = @"Fist Gesture";
