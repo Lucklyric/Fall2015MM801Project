@@ -19,6 +19,8 @@
 @property (assign,nonatomic) int unlockStatus;
 @property (assign,nonatomic) int connectionStatus;
 @property (assign,nonatomic) int syncStatus;
+@property (assign,nonatomic) NSTimeInterval fistTime;
+@property (assign,nonatomic) float timeDelay;
 - (UINavigationController*)connectMyo;
 + (MyoController*)sharedManager;
 @end

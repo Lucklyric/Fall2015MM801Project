@@ -25,6 +25,8 @@ static MyoController *sharedManager = nil;
 - (id)init{
     self = [super init];
     _originSetup=0;
+    _fistStatus=0;
+    _timeDelay = 1.0f/20;
     if (self)
     {
         self.currentView = nil;
@@ -137,9 +139,18 @@ static MyoController *sharedManager = nil;
     float diff=0.0f;
     // Create Euler angles from the quaternion of the orientation.
     TLMEulerAngles *angles = [TLMEulerAngles anglesWithQuaternion:orientationEvent.quaternion];
+    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     if(_fistStatus==1 && _originSetup==1){
         diff = _originX-angles.roll.degrees;
-        NSLog(@"Roll 沿x轴转动的差值: %f\n",diff);
+        //NSLog(@"Roll 沿x轴转动的差值: %f\n",diff);
+        if(currentTime-_fistTime>=_timeDelay){
+            _timeDelay+=(1.0f/20);
+            NSLog(@"%lf, %lf\n",currentTime, _fistTime);
+            //NSLog(@"Roll 沿x轴转动的差值: %f\n",diff);
+        
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoArmTwist"
+                                                            object:[[NSNumber alloc]initWithFloat:diff]];
+        }
     }
     // Next, we want to apply a rotation and perspective transformation based on the pitch, yaw, and roll.
     //CATransform3D rotationAndPerspectiveTransform = CATransform3DConcat(CATransform3DConcat(CATransform3DRotate (CATransform3DIdentity, angles.pitch.radians, -1.0, 0.0, 0.0), CATransform3DRotate(CATransform3DIdentity, angles.yaw.radians, 0.0, 1.0, 0.0)), CATransform3DRotate(CATransform3DIdentity, angles.roll.radians, 0.0, 0.0, -1.0));
@@ -147,10 +158,11 @@ static MyoController *sharedManager = nil;
     if(_fistStatus==1 && _originSetup==0){
         _originX=angles.roll.degrees;
         _originSetup=1;
+        _fistTime=[[NSDate date] timeIntervalSince1970];
+        _timeDelay=1.0f/20;
     }
     _Xrotation = angles.roll.degrees;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoArmTwist"
-                                                        object:[[NSNumber alloc]initWithFloat:diff]];
+    
 }
 
 - (void)didReceiveAccelerometerEvent:(NSNotification *)notification {
