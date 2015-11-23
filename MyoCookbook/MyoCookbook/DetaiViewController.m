@@ -179,6 +179,7 @@
     }
     NSNumber* number = [notification object];
     float diff = [number floatValue];
+    //TODO Make the chaing based on the tending
     rc.origin.y = self.preOffset - diff*10;
     [self.scrollTextField scrollRectToVisible:rc animated:YES];
     NSLog(@"%f",diff);

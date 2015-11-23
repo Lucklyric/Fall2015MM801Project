@@ -12,6 +12,7 @@
 #import "JHNotificationManager.h"
 #import "DetaiViewController.h"
 #import "CollectionViewController.h"
+#import "CalibrateViewController.h"
 @interface HomePageViewController ()
 
 @end
@@ -136,6 +137,9 @@
     UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Calibrate Myo"
                                                            style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                                                NSLog(@"You pressed button two");
+                                                               
+                                                               [self performSegueWithIdentifier:@"showCalibrate" sender:self];
+
                                                            }]; // 3
 
     UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"Cancle"
@@ -189,6 +193,11 @@
         
         [vc setFromView:self];
 
+    }else if ([[segue identifier] isEqualToString:@"showCalibrate"]){
+        CalibrateViewController *vc = [segue destinationViewController];
+        
+        [vc setFromView:self];
+        
     }
 
 }

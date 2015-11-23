@@ -224,6 +224,7 @@ static MyoController *sharedManager = nil;
             break;
         case TLMPoseTypeWaveIn:
             // Changes helloLabel's font to Courier New when the user is in a wave in pose.
+            NSLog(@"THRESH:%f",self.threshValue);
             if(_Xrotation>=_threshValue){
                 NSLog(@"向下动－－－－－－－－－－－－－－－－－－－－－\n");
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
