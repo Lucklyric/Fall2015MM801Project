@@ -150,7 +150,7 @@ static MyoController *sharedManager = nil;
         //NSLog(@"Roll 沿x轴转动的差值: %f\n",diff);
         if(currentTime-_fistTime>=_timeDelay){
             _timeDelay+=(1.0f/20);
-            NSLog(@"%lf, %lf\n",currentTime, _fistTime);
+            //NSLog(@"%lf, %lf\n",currentTime, _fistTime);
             //NSLog(@"Roll 沿x轴转动的差值: %f\n",diff);
         
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoArmTwist"
@@ -177,6 +177,7 @@ static MyoController *sharedManager = nil;
     }
     if(_LRrotation!=0 && _UDrotation!=0){
         _threshValue = (_LRrotation+_UDrotation)/2;
+        NSLog(@"THRESH:%f",self.threshValue);
     }
     
 }
@@ -224,7 +225,7 @@ static MyoController *sharedManager = nil;
             break;
         case TLMPoseTypeWaveIn:
             // Changes helloLabel's font to Courier New when the user is in a wave in pose.
-            NSLog(@"THRESH:%f",self.threshValue);
+          
             if(_Xrotation>=_threshValue){
                 NSLog(@"向下动－－－－－－－－－－－－－－－－－－－－－\n");
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
