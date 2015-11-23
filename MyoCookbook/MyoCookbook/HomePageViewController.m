@@ -11,6 +11,7 @@
 #import "MyoController.h"
 #import "JHNotificationManager.h"
 #import "DetaiViewController.h"
+#import "CollectionViewController.h"
 @interface HomePageViewController ()
 
 @end
@@ -183,6 +184,11 @@
         DetaiViewController *vc = [segue destinationViewController];
         
         [vc setFromView:self];
+    }else if ([[segue identifier] isEqualToString:@"showCollection"]){
+        CollectionViewController *vc = [segue destinationViewController];
+        
+        [vc setFromView:self];
+
     }
 
 }

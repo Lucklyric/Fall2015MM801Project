@@ -115,10 +115,15 @@
 }
 
 -(void)fistCallback{
-    
+    if (self.trackingLine == 1) {
+        [self backButtonTap:nil];
+    }
 }
 
 -(void)upCallback{
+    if (self.trackingLine == 1) {
+        return;
+    }
     CGFloat preSize = self.scrollTextField.font.pointSize;
     if (preSize > 35) {
         return;
@@ -129,6 +134,9 @@
 }
 
 -(void)downCallback{
+    if (self.trackingLine == 1) {
+        return;
+    }
     CGFloat preSize = self.scrollTextField.font.pointSize;
     if (preSize < 20) {
         return;
@@ -143,16 +151,24 @@
     if (self.trackingLine == 2) {
         self.backButton.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
         self.trackingLine =1;
-        self.textLabel
+        self.textLabel.backgroundColor = [UIColor colorWithRed:92/225.0f green: 129/225.0f  blue:237/225.0f  alpha:1];
+
     }
-    
 }
 
 -(void)rightCallback{
-    
+    if (self.trackingLine == 1) {
+        self.textLabel.backgroundColor = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.4];
+        self.trackingLine =2;
+        self.backButton.backgroundColor = [UIColor colorWithRed:92/225.0f green: 129/225.0f  blue:237/225.0f  alpha:1];
+        
+    }
 }
 
 - (void)myoCookBookArmTwistCallback:(NSNotification *)notification {
+    if (self.trackingLine == 1) {
+        return;
+    }
     UIScrollView* v = (UIScrollView*) self.scrollTextField ;
     CGRect rc = [self.scrollTextField bounds];
     rc = [self.scrollTextField convertRect:rc toView:v];
@@ -253,8 +269,18 @@
 - (IBAction)upTest:(id)sender {
     [self upCallback];
 }
+
 - (IBAction)fistTest:(id)sender {
 }
+
 - (IBAction)spredTest:(id)sender {
+}
+
+- (IBAction)leftTest:(id)sender {
+    [self leftCallback];
+}
+
+- (IBAction)rightTest:(id)sender {
+    [self rightCallback];
 }
 @end
