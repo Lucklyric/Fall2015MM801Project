@@ -11,6 +11,8 @@
 
 @interface MyoController : NSObject
 @property (assign,nonatomic) float Xrotation;
+@property (assign,nonatomic) float UDrotation;
+@property (assign,nonatomic) float LRrotation;
 @property (assign,nonatomic) float originX;
 @property (assign,nonatomic) int fistStatus;
 @property (assign,nonatomic) int originSetup;
@@ -21,6 +23,11 @@
 @property (assign,nonatomic) int syncStatus;
 @property (assign,nonatomic) NSTimeInterval fistTime;
 @property (assign,nonatomic) float timeDelay;
+@property (assign,nonatomic) int lrCalibration;
+@property (assign,nonatomic) int udCalibration;
+@property (assign,nonatomic) float threshValue;
 - (UINavigationController*)connectMyo;
 + (MyoController*)sharedManager;
+- (void)calibrateLR;
+- (void)calibrateUD;
 @end

@@ -27,6 +27,11 @@ static MyoController *sharedManager = nil;
     _originSetup=0;
     _fistStatus=0;
     _timeDelay = 1.0f/20;
+    _lrCalibration=0;
+    _udCalibration=0;
+    _LRrotation=0;
+    _UDrotation=0;
+    _threshValue=-5.0f;
     if (self)
     {
         self.currentView = nil;
@@ -162,6 +167,17 @@ static MyoController *sharedManager = nil;
         _timeDelay=1.0f/20;
     }
     _Xrotation = angles.roll.degrees;
+    if(_udCalibration==1){
+        _UDrotation=_Xrotation;
+        _udCalibration=0;
+    }
+    if(_lrCalibration==1){
+        _LRrotation=_Xrotation;
+        _lrCalibration=0;
+    }
+    if(_LRrotation!=0 && _UDrotation!=0){
+        _threshValue = (_LRrotation+_UDrotation)/2;
+    }
     
 }
 
@@ -208,7 +224,7 @@ static MyoController *sharedManager = nil;
             break;
         case TLMPoseTypeWaveIn:
             // Changes helloLabel's font to Courier New when the user is in a wave in pose.
-            if(_Xrotation>=-5){
+            if(_Xrotation>=_threshValue){
                 NSLog(@"向下动－－－－－－－－－－－－－－－－－－－－－\n");
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                                     object:@"MyoGestureWaveDown"];
@@ -222,7 +238,7 @@ static MyoController *sharedManager = nil;
             break;
         case TLMPoseTypeWaveOut:
             // Changes helloLabel's font to Snell Roundhand when the user is in a wave out pose.
-            if(_Xrotation>=-5){
+            if(_Xrotation>=_threshValue){
                 NSLog(@"向上动－－－－－－－－－－－－－－－－－－－－－\n");
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MyoCookbookGesture"
                                                                     object:@"MyoGestureWaveUp"];
@@ -260,6 +276,12 @@ static MyoController *sharedManager = nil;
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
     // return controller
     return controller;
+}
+- (void) calibrateLR{
+    _lrCalibration=1;
+}
+- (void) calibrateUD{
+    _udCalibration=1;
 }
 
 @end
