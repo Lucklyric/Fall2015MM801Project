@@ -34,7 +34,6 @@
         }else{
             self.myoStatusLabel.backgroundColor = [UIColor orangeColor];
             self.myoStatusLabel.text = @"UnSyn";
-            
         }
     }else{
         self.myoStatusLabel.backgroundColor = [UIColor redColor];
